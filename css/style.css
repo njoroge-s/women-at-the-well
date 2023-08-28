@@ -154,8 +154,17 @@ body {
     font-size: 2.6rem;
 }
 .about-box p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 1rem 0 3rem;
+}
+
+.about-box ul li {
+    font-size: 1.6rem;
+    margin-left: 0;
+}
+
+.about-box ul li span {
+    font-weight: 800;
 }
 
 /* Styling the three events section */
