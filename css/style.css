@@ -10,55 +10,87 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+:root {
+    --bg-color:#8973ec4d;
+    --second-bg-color: #f312f34d;
+    --text-color:#000000;
+    --main-color:#ffffff;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(137, 115, 236, 0.3), rgba(137,115,236,0.3));
-    position: relative;
     padding: 0 5%;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-nav {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 8%;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
-nav .logo {
-    width: 80px;
+
+.header .sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin-left: 40px;
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
 }
-nav ul li a {
-    color: black;
-    font-size: 18px;
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
 }
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
 .content {
+    
     text-align: center;
 }
 .content h1 {
     font-size: 50px;
     font-weight: 600;
-    transition: 0.5s;
-}
-.content h1:hover{
-    -webkit-text-stroke: 2px black;
-    color: transparent;
+    align-items: center;
+    justify-content: center;
+    display: center;
 }
 .content h3 {
     font-size: 24px;
     color: black;
 }
-.back-video {
+.content .back-video {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -66,4 +98,239 @@ nav ul li a {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 2rem solid var(--second-bg-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: #11dbaf;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.about h2 {
+    margin-bottom: 5rem;
+    font-size: 3.2rem;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-container .about-box {
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.about-container .about-box:hover {
+    border: var(--main-color);
+    transform: scale(1.02);
+}
+.about-box h3 {
+    font-size: 2.6rem;
+}
+.about-box p {
+    font-size: 1.8rem;
+    margin: 1rem 0 3rem;
+}
+
+/* Styling the three events section */
+.events {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--second-bg-color);
+    float: right;
+    box-sizing: border-box;
+}
+/* Styling the links of
+the events section */
+.events ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 40px;
+    box-sizing: border-box;
+}
+/* Styling the lists of the event section */
+.events ul li {
+    list-style: none;
+    background: #fff;
+    box-sizing: border-box;
+    height: 200px;
+    margin: 15px 0;
+}
+/* Styling the time class of events section */
+.events ul li .time {
+    position: relative;
+    padding: 20px;
+    background: #262626;
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+}
+/* Styling the hover effect
+    of events section */
+.events ul li:hover .time {
+    background: #e91e63;
+}
+/* Styling the header of time
+    class of events section */
+.events ul li .time h2 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 60px;
+    line-height: 30px;
+}
+/* Styling the texts of time
+class of events section */
+.events ul li .time h2 span {
+    font-size: 30px;
+}
+
+/* Styling the details
+class of events section */
+.events ul li .details {
+    padding: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+/* Styling the header of the
+details class of events section */
+.events ul li .details h3 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+/* Styling the lists of details
+class of events section */
+.events ul li .details p {
+    position: relative;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+}
+/* Styling the links of details
+class of events section */
+.events ul li .details a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1.5px solid #262626;
+    margin-top: 8px;
+    font-size: 18px;
+    transition: .5s;
+}
+/* Styling the details class's hover effect */
+.events ul li .details a:hover {
+    background: #e91e63;
+    color: #fff;
+    border-color: #e91e63;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+
+}
+
+
+.footer iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+
 }
